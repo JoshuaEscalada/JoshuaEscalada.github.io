@@ -82,16 +82,31 @@ function calculate() {
         alert("Please enter a valid number greater than 0.");
         return;
     }
+
     let factorial = 1;
-    for (let i = 1; i <= n; i++) {
+    let i = 1;
+    while (i <= n) {
         factorial *= i;
+        i++;
     }
     document.getElementById('factorialResult').innerHTML = `Factorial of ${n} is: ${factorial}`;
-    let sum = (n * (n + 1)) / 2;
+
+    let sum = 0;
+    let j = 1;
+    do {
+        sum += j;
+        j++;
+    } while (j <= n);
     document.getElementById('sumResult').innerHTML = `Sum of first ${n} natural numbers is: ${sum}`;
-    let average = sum / n;
+
+    let average = 0;
+    for (let k = 1; k <= n; k++) {
+        average += k;
+    }
+    average /= n;
     document.getElementById('averageResult').innerHTML = `Average of first ${n} natural numbers is: ${average.toFixed(2)}`;
 }
+
 
 function calculatePay() {
     var hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
