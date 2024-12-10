@@ -15,7 +15,7 @@
     <div class="dropdown-container">
         <label for="codeSelection">Select a code to run:</label>
         <select id="codeSelection" onchange="showSelectedCode()">
-            <option value="none" disabled selected>Choose a code</option>
+            <option value="none" disabled selected>Choose a code...</option>
             <option value="unitConverter">Unit Converter</option>
             <option value="incomeTaxCalculator">Philippines Income Tax Calculator</option>
             <option value="factorialSumAverage">Factorial, Sum, Average</option>
@@ -70,6 +70,8 @@
     <div class="section" id="payrollSystem">
         <h3>Payroll System</h3>
         <div class="form-container">
+            <label for="employeeName">Enter Employee Name:</label>
+            <input type="text" id="employeeName" placeholder="Enter employee name">
             <label for="hoursWorked">Enter Hours Worked:</label>
             <input type="number" id="hoursWorked" placeholder="Enter hours worked">
             <label for="hourlyRate">Enter Hourly Rate (₱):</label>
