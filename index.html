@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuswaILY19</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="logo.png" alt="JuswaILY19 Logo" class="logo">
+    <h2>JuswaILY19</h2>
+
+    <div class="dropdown-container">
+        <label for="codeSelection">Select a code to run:</label>
+        <select id="codeSelection" onchange="showSelectedCode()">
+            <option value="none">Choose a code...</option>
+            <option value="unitConverter">Unit Converter</option>
+            <option value="incomeTaxCalculator">Philippines Income Tax Calculator</option>
+            <option value="factorialSumAverage">Factorial, Sum, Average</option>
+            <option value="payrollSystem">Payroll System</option>
+        </select>
+    </div>
+
+    <div class="section" id="unitConverter">
+        <h3>Unit Converter</h3>
+        <div class="form-container">
+            <label for="celsius">Enter Celsius:</label>
+            <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+            <input type="button" value="Convert Celsius to Fahrenheit" onclick="convertCelsiusToFahrenheit()">
+            <div class="result" id="celsiusResult"></div>
+            <label for="fahrenheit">Enter Fahrenheit:</label>
+            <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
+            <input type="button" value="Convert Fahrenheit to Celsius" onclick="convertFahrenheitToCelsius()">
+            <div class="result" id="fahrenheitResult"></div>
+            <label for="meters">Enter Meters:</label>
+            <input type="number" id="meters" placeholder="Enter distance in meters">
+            <input type="button" value="Convert Meters to Feet" onclick="convertMetersToFeet()">
+            <div class="result" id="metersResult"></div>
+            <label for="feet">Enter Feet:</label>
+            <input type="number" id="feet" placeholder="Enter distance in feet">
+            <input type="button" value="Convert Feet to Meters" onclick="convertFeetToMeters()">
+            <div class="result" id="feetResult"></div>
+        </div>
+    </div>
+
+    <div class="section" id="incomeTaxCalculator">
+        <h3>Philippines Income Tax Calculator</h3>
+        <div class="form-container">
+            <label for="income">Enter Your Income (₱):</label>
+            <input type="number" id="income" placeholder="Enter your annual income">
+            <input type="button" value="Calculate Tax" onclick="calculateTax()">
+            <div class="result" id="taxResult"></div>
+        </div>
+    </div>
+
+    <div class="section" id="factorialSumAverage">
+        <h3>Factorial, Sum, and Average of First N Natural Numbers</h3>
+        <div class="form-container">
+            <label for="n">Enter a number (N):</label>
+            <input type="number" id="n" min="1" placeholder="Enter N">
+            <button onclick="calculate()">Calculate</button>
+            <div id="factorialResult" class="result"></div>
+            <div id="sumResult" class="result"></div>
+            <div id="averageResult" class="result"></div>
+        </div>
+    </div>
+
+    <div class="section" id="payrollSystem">
+        <h3>Payroll System</h3>
+        <div class="form-container">
+            <label for="hoursWorked">Enter Hours Worked:</label>
+            <input type="number" id="hoursWorked" placeholder="Enter hours worked">
+            <label for="hourlyRate">Enter Hourly Rate (₱):</label>
+            <input type="number" id="hourlyRate" placeholder="Enter hourly rate">
+            <input type="button" value="Calculate Pay" onclick="calculatePay()">
+            <div class="result" id="payrollResult"></div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>About the Developer: <strong>I am Joshua Elly Escalada, a 1st year BSIT student. I am submitting this webpage to our ITC Professor, Mr. John Roy Geralde.</strong></p>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
