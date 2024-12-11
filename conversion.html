@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .dropdown-container select {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-container input[type="number"], .form-container input[type="button"] {
+            margin: 5px 0;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Unit Converter</h2>
+        <div class="dropdown-container">
+            <label for="codeSelection">Select a code to run:</label>
+            <select id="codeSelection">
+                <option value="unitConverter" selected>Unit Converter</option>
+            </select>
+        </div>
+        <div class="form-container">
+            <label for="celsius">Enter Celsius:</label>
+            <input type="number" id="celsius" placeholder="Temperature in Celsius">
+            <input type="button" value="Convert to Fahrenheit">
 
+            <label for="fahrenheit">Enter Fahrenheit:</label>
+            <input type="number" id="fahrenheit" placeholder="Temperature in Fahrenheit">
+            <input type="button" value="Convert to Celsius">
+
+            <label for="meters">Enter Meters:</label>
+            <input type="number" id="meters" placeholder="Distance in Meters">
+            <input type="button" value="Convert to Feet">
+
+            <label for="feet">Enter Feet:</label>
+            <input type="number" id="feet" placeholder="Distance in Feet">
+            <input type="button" value="Convert to Meters">
+        </div>
+    </div>
+</body>
+</html>
