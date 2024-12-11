@@ -1,14 +1,8 @@
 h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    color: #00FF00; /* Green */
 }
 
-input[type="number"], input[type="button"], button {
-    margin-top: 10px;
-}
-
-.result {
-    margin-top: 10px;
+#taxResult {
+    font-size: 1.2em;
     font-weight: bold;
-    color: #7b7b7b;
 }
