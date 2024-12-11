@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factorial, Sum, and Average</title>
+    <title>Factorial, Sum, Average</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="container">
-    <img src="websitelogonijuswa.png" alt="Logo" class="logo">
-    <h2>Factorial, Sum, and Average of First N Natural Numbers</h2>
-
-    <div class="form-container">
-        <label for="n">Enter a number (N):</label>
-        <input type="number" id="n" min="1" placeholder="Enter N">
-        <button onclick="calculate()">Calculate</button>
-        <div id="factorialResult" class="result"></div>
-        <div id="sumResult" class="result"></div>
-        <div id="averageResult" class="result"></div>
+    <div class="container">
+        <h3>Factorial, Sum, and Average of First N Natural Numbers</h3>
+        <div class="form-container">
+            <label for="n">Enter a number (N):</label>
+            <input type="number" id="n" min="1">
+            <button onclick="calculate()">Calculate</button>
+            <div id="factorialResult" class="result"></div>
+            <div id="sumResult" class="result"></div>
+            <div id="averageResult" class="result"></div>
+        </div>
+        <button onclick="backToMenu()">Back to Main Menu</button>
     </div>
-
-    <button onclick="location.href='index.html'">Back to Main Menu</button>
-</div>
-
-<script src="factorial.js"></script>
+    <script src="factorial.js"></script>
 </body>
 </html>
