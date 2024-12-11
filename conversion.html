@@ -7,36 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="container">
-    <img src="websitelogonijuswa.png" alt="Logo" class="logo">
-    <h2>Unit Converter</h2>
-
-    <div class="form-container">
-        <label for="celsius">Enter Celsius:</label>
-        <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
-        <input type="button" value="Convert Celsius to Fahrenheit" onclick="convertCelsiusToFahrenheit()">
-        <div class="result" id="celsiusResult"></div>
-
-        <label for="fahrenheit">Enter Fahrenheit:</label>
-        <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
-        <input type="button" value="Convert Fahrenheit to Celsius" onclick="convertFahrenheitToCelsius()">
-        <div class="result" id="fahrenheitResult"></div>
-
-        <label for="meters">Enter Meters:</label>
-        <input type="number" id="meters" placeholder="Enter distance in meters">
-        <input type="button" value="Convert Meters to Feet" onclick="convertMetersToFeet()">
-        <div class="result" id="metersResult"></div>
-
-        <label for="feet">Enter Feet:</label>
-        <input type="number" id="feet" placeholder="Enter distance in feet">
-        <input type="button" value="Convert Feet to Meters" onclick="convertFeetToMeters()">
-        <div class="result" id="feetResult"></div>
+    <div class="container">
+        <h3>Unit Converter</h3>
+        <div class="form-container">
+            <label for="celsius">Enter Celsius:</label>
+            <input type="number" id="celsius">
+            <input type="button" value="Convert Celsius to Fahrenheit" onclick="convertCelsiusToFahrenheit()">
+            <div class="result" id="celsiusResult"></div>
+            <label for="fahrenheit">Enter Fahrenheit:</label>
+            <input type="number" id="fahrenheit">
+            <input type="button" value="Convert Fahrenheit to Celsius" onclick="convertFahrenheitToCelsius()">
+            <div class="result" id="fahrenheitResult"></div>
+            <label for="meters">Enter Meters:</label>
+            <input type="number" id="meters">
+            <input type="button" value="Convert Meters to Feet" onclick="convertMetersToFeet()">
+            <div class="result" id="metersResult"></div>
+            <label for="feet">Enter Feet:</label>
+            <input type="number" id="feet">
+            <input type="button" value="Convert Feet to Meters" onclick="convertFeetToMeters()">
+            <div class="result" id="feetResult"></div>
+        </div>
+        <button onclick="backToMenu()">Back to Main Menu</button>
     </div>
-
-    <button onclick="location.href='index.html'">Back to Main Menu</button>
-</div>
-
-<script src="conversion.js"></script>
+    <script src="conversion.js"></script>
 </body>
 </html>
