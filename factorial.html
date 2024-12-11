@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factorial, Sum, and Average</title>
+    <title>Factorial, Sum & Average</title>
     <link rel="stylesheet" href="factorial.css">
 </head>
 <body>
     <div class="container">
-        <img src="websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
-        <h2>Factorial, Sum, and Average</h2>
-        <div class="dropdown-container">
-            <select id="codeSelection">
-                <option value="factorialSumAverage" selected>Factorial, Sum, and Average</option>
-            </select>
+        <img src="../images/websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
+        <h2>Factorial, Sum & Average</h2>
+        <div class="form-container">
+            <label for="number">Enter a number:</label>
+            <input type="number" id="number" placeholder="Enter a number">
+            <input type="button" value="Calculate Factorial" onclick="calculateFactorial()">
+            <div class="result" id="factorialResult"></div>
         </div>
         <div class="form-container">
-            <label for="n">Enter a number (N):</label>
-            <input type="number" id="n">
-            <input type="button" value="Calculate">
+            <label for="numbers">Enter numbers (comma-separated):</label>
+            <input type="text" id="numbers" placeholder="e.g., 1,2,3,4">
+            <input type="button" value="Calculate Sum & Average" onclick="calculateSumAndAverage()">
+            <div class="result" id="sumResult"></div>
+            <div class="result" id="averageResult"></div>
         </div>
     </div>
     <script src="factorial.js"></script>
