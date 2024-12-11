@@ -1,41 +1,72 @@
-let employeeCount = 0;
-let payrollData = [];
-
 function calculatePay() {
-    const name = document.getElementById("employeeName").value;
-    const daysWorked = document.getElementById("daysWorked").value;
-    const dailyRate = document.getElementById("dailyRate").value;
-
-    if (!name || !daysWorked || !dailyRate) return;
-
-    const grossPay = daysWorked * dailyRate;
-    const deduction = grossPay * 0.1; // 10% deduction
-    const netPay = grossPay - deduction;
-
-    employeeCount++;
-    payrollData.push({ employeeCount, name, daysWorked, dailyRate, grossPay, deduction, netPay });
-    updatePayrollTable();
+    var employeeName = document.getElementById('employeeName').value;
+    var daysWorked = parseFloat(document.getElementById('daysWorked').value);
+    var dailyRate = parseFloat(document.getElementById('dailyRate').value);
+    
+    if (isNaN(daysWorked) || isNaN(dailyRate) || daysWorked <= 0 || dailyRate <= 0 || employeeName.trim() === "") {
+        document.getElementById('payrollResult').innerHTML = "Please enter valid details for employee name, days worked, and daily rate.";
+        return;
+    }
+    var totalPay = daysWorked * dailyRate;
+    document.getElementById('payrollResult').innerHTML = `Employee: ${employeeName} <br>Total Pay: ₱${totalPay.toFixed(2)}`;
 }
 
-function updatePayrollTable() {
-    const tableBody = document.getElementById("payrollTableBody");
-    tableBody.innerHTML = "";
-    payrollData.forEach((data) => {
-        const row = document.createElement("tr");
+var employeeData = [];
+
+function addEmployeeData() {
+    const employeeName = document.getElementById('employeeName').value;
+    const daysWorked = parseFloat(document.getElementById('daysWorked').value);
+    const dailyRate = parseFloat(document.getElementById('dailyRate').value);
+
+    if (employeeName.trim() === "" || isNaN(daysWorked) || isNaN(dailyRate)) {
+        alert("Please provide valid input for all fields.");
+        return;
+    }
+
+    const totalPay = daysWorked * dailyRate;
+
+    const employee = {
+        employeeName,
+        daysWorked,
+        dailyRate,
+        totalPay
+    };
+
+    employeeData.push(employee);
+    displayEmployeeData();
+    clearInputFields();
+}
+
+function displayEmployeeData() {
+    const table = document.getElementById('payrollTable');
+    table.innerHTML = `
+        <tr>
+            <th>Employee Name</th>
+            <th>Days Worked</th>
+            <th>Daily Rate (₱)</th>
+            <th>Total Pay (₱)</th>
+            <th>Action</th>
+        </tr>
+    `;
+    employeeData.forEach((data, index) => {
+        const row = table.insertRow();
         row.innerHTML = `
-            <td>${data.employeeCount}</td>
-            <td>${data.name}</td>
+            <td>${data.employeeName}</td>
             <td>${data.daysWorked}</td>
             <td>${data.dailyRate}</td>
-            <td>${data.grossPay.toFixed(2)}</td>
-            <td>${data.deduction.toFixed(2)}</td>
-            <td><button onclick="removeEmployee(${data.employeeCount})">Remove</button></td>
+            <td>${data.totalPay.toFixed(2)}</td>
+            <td><button onclick="deleteEmployee(${index})">Delete</button></td>
         `;
-        tableBody.appendChild(row);
     });
 }
 
-function removeEmployee(employeeNumber) {
-    payrollData = payrollData.filter(employee => employee.employeeCount !== employeeNumber);
-    updatePayrollTable();
+function deleteEmployee(index) {
+    employeeData.splice(index, 1);
+    displayEmployeeData();
+}
+
+function clearInputFields() {
+    document.getElementById('employeeName').value = "";
+    document.getElementById('daysWorked').value = "";
+    document.getElementById('dailyRate').value = "";
 }
