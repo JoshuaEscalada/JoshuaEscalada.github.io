@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payroll System</title>
-    <link rel="stylesheet" href="payroll.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="container">
-    <img src="websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
-    <h2>Payroll System</h2>
+    <h3>Payroll System</h3>
 
-    <button onclick="showSelectedCode('unitConverter')">Unit Converter</button>
-    <button onclick="showSelectedCode('incomeTaxCalculator')">Philippines Income Tax Calculator</button>
-    <button onclick="showSelectedCode('factorialSumAverage')">Factorial, Sum, Average</button>
-    <button onclick="showSelectedCode('payrollSystem')">Payroll System</button>
-
-    <div class="section" id="payrollSystem">
-        <h3>Payroll System</h3>
-        <div class="form-container">
-            <label for="empName">Employee Name:</label>
-            <input type="text" id="empName" placeholder="Enter employee name">
-            <label for="hoursWorked">Hours Worked:</label>
-            <input type="number" id="hoursWorked" placeholder="Enter hours worked">
-            <label for="hourlyRate">Hourly Rate (₱):</label>
-            <input type="number" id="hourlyRate" placeholder="Enter hourly rate">
-            <label for="deductions">Deductions (₱):</label>
-            <input type="number" id="deductions" placeholder="Enter deductions">
-            <button onclick="addPayrollEntry()">Add Entry</button>
-        </div>
-        <table id="payrollTable">
-            <thead>
-                <tr>
-                    <th>Employee Name</th>
-                    <th>Hours Worked</th>
-                    <th>Hourly Rate</th>
-                    <th>Deductions</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Payroll entries will appear here -->
-            </tbody>
-        </table>
+    <div class="form-container">
+        <label for="employeeName">Enter Employee Name:</label>
+        <input type="text" id="employeeName" placeholder="Enter employee name">
+        <label for="daysWorked">Enter Days Worked:</label>
+        <input type="number" id="daysWorked" placeholder="Enter days worked">
+        <label for="dailyRate">Enter Daily Rate (₱):</label>
+        <input type="number" id="dailyRate" placeholder="Enter daily rate">
+        <input type="button" value="Calculate Pay" onclick="calculatePay()">
     </div>
+
+    <div id="payrollResult" class="result"></div>
+
+    <table id="payrollTable">
+        <thead>
+            <tr>
+                <th>Employee Number</th>
+                <th>Employee Name</th>
+                <th>Days Worked</th>
+                <th>Daily Rate</th>
+                <th>Gross Pay</th>
+                <th>Deduction Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="payrollTableBody"></tbody>
+    </table>
+
+    <button onclick="window.location.href='index.html'">Go to Main Menu</button>
+    <img src="websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
 </div>
 
-<script src="payroll.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
