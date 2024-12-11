@@ -1,3 +1,9 @@
+function showSelectedCode(selectedCode) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.classList.remove('active'));
+    document.getElementById(selectedCode).classList.add('active');
+}
+
 function convertCelsiusToFahrenheit() {
     const celsius = parseFloat(document.getElementById('celsius').value);
     if (!isNaN(celsius)) {
