@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Converter</title>
+    <title>Unit Conversion</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h3>Unit Converter</h3>
+        <img src="websitelogonijuswa.png" alt="Logo" class="logo">
+        <h2>Unit Converter</h2>
+        
         <div class="form-container">
+            <h3>Celsius to Fahrenheit / Fahrenheit to Celsius</h3>
             <label for="celsius">Enter Celsius:</label>
-            <input type="number" id="celsius">
+            <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
             <input type="button" value="Convert Celsius to Fahrenheit" onclick="convertCelsiusToFahrenheit()">
-            <div class="result" id="celsiusResult"></div>
+            <div id="celsiusResult" class="result"></div>
+
             <label for="fahrenheit">Enter Fahrenheit:</label>
-            <input type="number" id="fahrenheit">
+            <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
             <input type="button" value="Convert Fahrenheit to Celsius" onclick="convertFahrenheitToCelsius()">
-            <div class="result" id="fahrenheitResult"></div>
-            <label for="meters">Enter Meters:</label>
-            <input type="number" id="meters">
-            <input type="button" value="Convert Meters to Feet" onclick="convertMetersToFeet()">
-            <div class="result" id="metersResult"></div>
-            <label for="feet">Enter Feet:</label>
-            <input type="number" id="feet">
-            <input type="button" value="Convert Feet to Meters" onclick="convertFeetToMeters()">
-            <div class="result" id="feetResult"></div>
+            <div id="fahrenheitResult" class="result"></div>
         </div>
-        <button onclick="backToMenu()">Back to Main Menu</button>
+
+        <div class="form-container">
+            <h3>Meters to Feet / Feet to Meters</h3>
+            <label for="meters">Enter Meters:</label>
+            <input type="number" id="meters" placeholder="Enter distance in meters">
+            <input type="button" value="Convert Meters to Feet" onclick="convertMetersToFeet()">
+            <div id="metersResult" class="result"></div>
+
+            <label for="feet">Enter Feet:</label>
+            <input type="number" id="feet" placeholder="Enter distance in feet">
+            <input type="button" value="Convert Feet to Meters" onclick="convertFeetToMeters()">
+            <div id="feetResult" class="result"></div>
+        </div>
+
+        <div class="form-container">
+            <input type="button" value="Back to Main Menu" onclick="window.location.href='index.html'">
+        </div>
     </div>
+
     <script src="conversion.js"></script>
 </body>
 </html>
