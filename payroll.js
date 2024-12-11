@@ -1,36 +1,41 @@
-function showSelectedCode(selectedCode) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => section.classList.remove('active'));
-    document.getElementById(selectedCode).classList.add('active');
+let employeeCount = 0;
+let payrollData = [];
+
+function calculatePay() {
+    const name = document.getElementById("employeeName").value;
+    const daysWorked = document.getElementById("daysWorked").value;
+    const dailyRate = document.getElementById("dailyRate").value;
+
+    if (!name || !daysWorked || !dailyRate) return;
+
+    const grossPay = daysWorked * dailyRate;
+    const deduction = grossPay * 0.1; // 10% deduction
+    const netPay = grossPay - deduction;
+
+    employeeCount++;
+    payrollData.push({ employeeCount, name, daysWorked, dailyRate, grossPay, deduction, netPay });
+    updatePayrollTable();
 }
 
-function addPayrollEntry() {
-    const name = document.getElementById('empName').value;
-    const hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
-    const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
-    const deductions = parseFloat(document.getElementById('deductions').value);
-
-    if (name && !isNaN(hoursWorked) && !isNaN(hourlyRate) && !isNaN(deductions)) {
-        const row = document.createElement('tr');
+function updatePayrollTable() {
+    const tableBody = document.getElementById("payrollTableBody");
+    tableBody.innerHTML = "";
+    payrollData.forEach((data) => {
+        const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${name}</td>
-            <td>${hoursWorked}</td>
-            <td>₱${hourlyRate}</td>
-            <td>₱${deductions}</td>
-            <td><button onclick="deletePayrollEntry(this)">Delete</button></td>
+            <td>${data.employeeCount}</td>
+            <td>${data.name}</td>
+            <td>${data.daysWorked}</td>
+            <td>${data.dailyRate}</td>
+            <td>${data.grossPay.toFixed(2)}</td>
+            <td>${data.deduction.toFixed(2)}</td>
+            <td><button onclick="removeEmployee(${data.employeeCount})">Remove</button></td>
         `;
-        document.querySelector('#payrollTable tbody').appendChild(row);
-
-        document.getElementById('empName').value = '';
-        document.getElementById('hoursWorked').value = '';
-        document.getElementById('hourlyRate').value = '';
-        document.getElementById('deductions').value = '';
-    } else {
-        alert('Please fill in all fields correctly.');
-    }
+        tableBody.appendChild(row);
+    });
 }
 
-function deletePayrollEntry(button) {
-    const row = button.closest('tr');
-    row.remove();
+function removeEmployee(employeeNumber) {
+    payrollData = payrollData.filter(employee => employee.employeeCount !== employeeNumber);
+    updatePayrollTable();
 }
