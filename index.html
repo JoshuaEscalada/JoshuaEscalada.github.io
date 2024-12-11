@@ -3,23 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuswaILY19</title>
+    <title>JuswaILY19 - Main Menu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>JuswaILY19</h2>
-    
-    <div class="menu-buttons">
-        <button onclick="location.href='conversion.html'">Unit Converter</button>
-        <button onclick="location.href='tax_calculator.html'">Income Tax Calculator</button>
-        <button onclick="location.href='factorial.html'">Factorial, Sum, Average</button>
-        <button onclick="location.href='payroll.html'">Payroll System</button>
+    <img src="websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
+    <h2>JuswaILY19 - Main Menu</h2>
+
+    <div class="dropdown-container">
+        <label for="codeSelection">Select a code to run:</label>
+        <select id="codeSelection" onchange="showSelectedCode()">
+            <option value="none" disabled selected>Choose a code...</option>
+            <option value="unitConverter">Unit Converter</option>
+            <option value="incomeTaxCalculator">Philippines Income Tax Calculator</option>
+            <option value="factorialSumAverage">Factorial, Sum, Average</option>
+            <option value="payrollSystem">Payroll System</option>
+        </select>
     </div>
 
-    <img src="websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
+    <div class="section" id="unitConverter">
+        <h3>Unit Converter</h3>
+        <button onclick="location.href='unit-converter.html'">Go to Unit Converter</button>
+    </div>
+
+    <div class="section" id="incomeTaxCalculator">
+        <h3>Philippines Income Tax Calculator</h3>
+        <button onclick="location.href='tax-calculator.html'">Go to Tax Calculator</button>
+    </div>
+
+    <div class="section" id="factorialSumAverage">
+        <h3>Factorial, Sum, and Average of First N Natural Numbers</h3>
+        <button onclick="location.href='factorial.html'">Go to Factorial Calculator</button>
+    </div>
+
+    <div class="section" id="payrollSystem">
+        <h3>Payroll System</h3>
+        <button onclick="location.href='payroll.html'">Go to Payroll System</button>
+    </div>
 </div>
 
+<script src="scripts.js"></script>
 </body>
 </html>
