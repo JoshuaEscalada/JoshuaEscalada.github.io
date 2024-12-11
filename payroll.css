@@ -4,12 +4,16 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     width: 60%;
     margin: 0 auto;
     padding: 15px;
+    flex-grow: 1;
 }
 
 h2 {
@@ -96,7 +100,8 @@ footer {
     background-color: #333;
     color: white;
     padding: 10px;
-    margin-top: 20px;
+    text-align: center;
+    margin-top: auto;
 }
 
 footer p {
