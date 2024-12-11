@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Calculator</title>
-    <link rel="stylesheet" href="tax-calculator.css">
+    <title>Philippines Income Tax Calculator</title>
+    <link rel="stylesheet" href="taxcalculator.css">
 </head>
 <body>
-    <div class="container">
-        <img src="../images/websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
-        <h2>Tax Calculator</h2>
+
+<div class="container">
+    <img src="assets/websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
+    <h2>Philippines Income Tax Calculator</h2>
+
+    <button onclick="showSelectedCode('unitConverter')">Unit Converter</button>
+    <button onclick="showSelectedCode('incomeTaxCalculator')">Philippines Income Tax Calculator</button>
+    <button onclick="showSelectedCode('factorialSumAverage')">Factorial, Sum, Average</button>
+    <button onclick="showSelectedCode('payrollSystem')">Payroll System</button>
+
+    <div class="section" id="incomeTaxCalculator">
+        <h3>Philippines Income Tax Calculator</h3>
         <div class="form-container">
-            <label for="income">Enter your income (₱):</label>
-            <input type="number" id="income" placeholder="Enter your income">
-            <label for="taxRate">Enter tax rate (%):</label>
-            <input type="number" id="taxRate" placeholder="Enter tax rate">
-            <input type="button" value="Calculate Tax" onclick="calculateTax()">
+            <label for="income">Enter Annual Income (₱):</label>
+            <input type="number" id="income" placeholder="Enter your annual income">
+            <button onclick="calculateTax()">Calculate Tax</button>
             <div class="result" id="taxResult"></div>
-            <div class="result" id="remainingIncomeResult"></div>
+            <div class="result" id="remainingIncome"></div>
         </div>
     </div>
-    <script src="tax-calculator.js"></script>
+</div>
+
+<script src="taxcalculator.js"></script>
 </body>
 </html>
