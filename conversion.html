@@ -7,34 +7,39 @@
     <link rel="stylesheet" href="conversion.css">
 </head>
 <body>
-    <div class="container">
-        <img src="../images/websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
-        <h2>Unit Converter</h2>
+
+<div class="container">
+    <img src="assets/websitelogonijuswa.png" alt="JuswaILY19 Logo" class="logo">
+    <h2>Unit Converter</h2>
+
+    <button onclick="showSelectedCode('unitConverter')">Unit Converter</button>
+    <button onclick="showSelectedCode('incomeTaxCalculator')">Philippines Income Tax Calculator</button>
+    <button onclick="showSelectedCode('factorialSumAverage')">Factorial, Sum, Average</button>
+    <button onclick="showSelectedCode('payrollSystem')">Payroll System</button>
+
+    <div class="section" id="unitConverter">
+        <h3>Unit Converter</h3>
         <div class="form-container">
             <label for="celsius">Enter Celsius:</label>
             <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
             <input type="button" value="Convert Celsius to Fahrenheit" onclick="convertCelsiusToFahrenheit()">
             <div class="result" id="celsiusResult"></div>
-        </div>
-        <div class="form-container">
             <label for="fahrenheit">Enter Fahrenheit:</label>
             <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
             <input type="button" value="Convert Fahrenheit to Celsius" onclick="convertFahrenheitToCelsius()">
             <div class="result" id="fahrenheitResult"></div>
-        </div>
-        <div class="form-container">
             <label for="meters">Enter Meters:</label>
             <input type="number" id="meters" placeholder="Enter distance in meters">
             <input type="button" value="Convert Meters to Feet" onclick="convertMetersToFeet()">
             <div class="result" id="metersResult"></div>
-        </div>
-        <div class="form-container">
             <label for="feet">Enter Feet:</label>
             <input type="number" id="feet" placeholder="Enter distance in feet">
             <input type="button" value="Convert Feet to Meters" onclick="convertFeetToMeters()">
             <div class="result" id="feetResult"></div>
         </div>
     </div>
-    <script src="conversion.js"></script>
+</div>
+
+<script src="conversion.js"></script>
 </body>
 </html>
