@@ -1,25 +1,27 @@
-let employeeNumber = 1;
 function calculatePay() {
-    const name = document.getElementById('employeeName').value;
-    const daysWorked = parseInt(document.getElementById('daysWorked').value);
-    const dailyRate = parseFloat(document.getElementById('dailyRate').value);
-    const grossPay = daysWorked * dailyRate;
-    const deduction = grossPay * 0.1;
-    const netPay = grossPay - deduction;
+    var employeeName = document.getElementById('employeeName').value;
+    var daysWorked = parseFloat(document.getElementById('daysWorked').value); 
+    var dailyRate = parseFloat(document.getElementById('dailyRate').value); 
 
-    const row = document.createElement('tr');
-    row.innerHTML = `
-        <td>${employeeNumber++}</td>
-        <td>${name}</td>
-        <td>${daysWorked}</td>
-        <td>${dailyRate.toFixed(2)}</td>
-        <td>${grossPay.toFixed(2)}</td>
-        <td>${deduction.toFixed(2)}</td>
-        <td><button onclick="deleteRow(this)">Delete</button></td>
-    `;
-    document.querySelector('#payrollTable tbody').appendChild(row);
-}
-
-function deleteRow(button) {
-    button.closest('tr').remove();
+    if (isNaN(daysWorked) || isNaN(dailyRate) || daysWorked <= 0 || dailyRate <= 0 || employeeName.trim() === "") { 
+        document.getElementById('payrollResult').innerHTML = "Please enter valid details for employee name, days, and rate."; 
+        return;
+    }
+    
+    var totalPay = daysWorked * dailyRate;
+    document.getElementById('payrollResult').innerHTML = `Employee: ${employeeName} <br>Total Pay: ₱${totalPay.toFixed(2)}`;
+    
+    // Update payroll table
+    const table = document.getElementById('payrollTable').getElementsByTagName('tbody')[0];
+    let row = table.insertRow();
+    row.insertCell(0).innerText = employeeName;
+    row.insertCell(1).innerText = daysWorked;
+    row.insertCell(2).innerText = `₱${dailyRate.toFixed(2)}`;
+    row.insertCell(3).innerText = `₱${totalPay.toFixed(2)}`;
+    let deleteButton = document.createElement('button');
+    deleteButton.innerText = "Delete";
+    deleteButton.onclick = function() {
+        table.deleteRow(row.rowIndex);
+    };
+    row.insertCell(4).appendChild(deleteButton);
 }
