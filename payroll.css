@@ -1,23 +1,21 @@
-table {
-    width: 100%;
+h3 {
+    color: #00FF00; /* Green */
+}
+
+#payrollTable {
     margin-top: 20px;
-    border-collapse: collapse;
+    border: 1px solid #00FF00;
+    border-radius: 8px;
 }
 
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
+#payrollTableBody {
+    background-color: #222;
 }
 
-button {
+td button {
+    background-color: #FF0000; /* Red */
+    color: #fff;
     padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #d32f2f;
 }
