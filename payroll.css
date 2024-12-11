@@ -1,47 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 .container {
-    background-color: white;
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 1000px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    min-height: 80vh;
+    position: relative;
 }
 
-h3 {
+.logo {
+    display: block;
+    max-width: 250px;
+    height: 150px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+h2 {
     text-align: center;
-    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #4CAF50;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
 }
 
 .form-container {
     margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-input[type="button"] {
-    padding: 10px 15px;
-    border-radius: 4px;
-    background-color: #28a745;
-    color: white;
+input[type="number"], button {
+    background-color: #444;
+    color: #fff;
     border: none;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-input[type="button"]:hover {
-    background-color: #218838;
+input[type="number"]:focus, button:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
 }
+
+input[type="button"]:hover, button:hover {
+    background-color: #555;
+}
+
+label, .result {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.result {
+    font-weight: bold;
+    color: #7b7b7b;
+}
+
+.dropdown-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    input[type="number"], button, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+/* Payroll Specific Styles */
 
 table {
     width: 100%;
@@ -55,22 +144,28 @@ table, th, td {
 
 th, td {
     padding: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 th {
-    background-color: #007BFF;
+    background-color: #444;
     color: white;
 }
 
-td button {
-    background-color: #dc3545;
+td {
+    background-color: #333;
+}
+
+button.delete {
+    background-color: red;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-td button:hover {
-    background-color: #c82333;
+button.delete:hover {
+    background-color: darkred;
 }
+
