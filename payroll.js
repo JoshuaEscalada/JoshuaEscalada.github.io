@@ -1,19 +1,12 @@
-function showSelectedCode() {
-    const selectedCode = document.getElementById('codeSelection').value;
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => section.classList.remove('active'));
-    if (selectedCode !== 'none') {
-        document.getElementById(selectedCode).classList.add('active');
+function calculateNetSalary() {
+    const salary = parseFloat(document.getElementById('salary').value);
+    const bonus = parseFloat(document.getElementById('bonus').value);
+    const deductions = parseFloat(document.getElementById('deductions').value);
+    
+    if (!isNaN(salary) && !isNaN(bonus) && !isNaN(deductions)) {
+        const netSalary = salary + bonus - deductions;
+        document.getElementById('netSalaryResult').innerText = `Net Salary: ₱${netSalary.toFixed(2)}`;
+    } else {
+        document.getElementById('netSalaryResult').innerText = "Please enter valid values!";
     }
-}
-function calculatePay() {
-    var employeeName = document.getElementById('employeeName').value;
-    var hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
-    var hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
-    if (isNaN(hoursWorked) || isNaN(hourlyRate) || hoursWorked <= 0 || hourlyRate <= 0 || employeeName.trim() === "") {
-        document.getElementById('payrollResult').innerHTML = "Please enter valid details for employee name, hours, and rate.";
-        return;
-    }
-    var totalPay = hoursWorked * hourlyRate;
-    document.getElementById('payrollResult').innerHTML = `Employee: ${employeeName} <br>Total Pay: ₱${totalPay.toFixed(2)}`;
 }
