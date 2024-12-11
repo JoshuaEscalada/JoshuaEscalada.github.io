@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philippines Income Tax Calculator</title>
+    <title>Tax Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="container">
-    <img src="websitelogonijuswa.png" alt="Logo" class="logo">
-    <h2>Philippines Income Tax Calculator</h2>
-
-    <div class="form-container">
-        <label for="income">Enter Your Income (₱):</label>
-        <input type="number" id="income" placeholder="Enter your annual income">
-        <input type="button" value="Calculate Tax" onclick="calculateTax()">
-        <div class="result" id="taxResult"></div>
+    <div class="container">
+        <h3>Philippines Income Tax Calculator</h3>
+        <div class="form-container">
+            <label for="income">Enter Your Income (₱):</label>
+            <input type="number" id="income">
+            <input type="button" value="Calculate Tax" onclick="calculateTax()">
+            <div class="result" id="taxResult"></div>
+        </div>
+        <button onclick="backToMenu()">Back to Main Menu</button>
     </div>
-
-    <button onclick="location.href='index.html'">Back to Main Menu</button>
-</div>
-
-<script src="taxcalculator.js"></script>
+    <script src="taxcalculator.js"></script>
 </body>
 </html>
