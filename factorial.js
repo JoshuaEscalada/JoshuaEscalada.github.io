@@ -6,15 +6,28 @@ function showSelectedCode(selectedCode) {
 
 function calculateFactorialSumAverage() {
     const number = parseInt(document.getElementById('number').value);
-    if (!isNaN(number)) {
+    
+    if (!isNaN(number) && number > 0) {
         let factorial = 1;
-        let sum = 0;
-        for (let i = 1; i <= number; i++) {
+        let i = 1;
+        while (i <= number) {
             factorial *= i;
-            sum += i;
+            i++;
         }
-        let average = sum / number;
-        
+
+        let sum = 0;
+        let j = 1;
+        do {
+            sum += j;
+            j++;
+        } while (j <= number);
+
+        let sumForAverage = 0;
+        for (let k = 1; k <= number; k++) {
+            sumForAverage += k;
+        }
+        let average = sumForAverage / number;
+
         document.getElementById('factorialResult').innerText = `Factorial of ${number}: ${factorial}`;
         document.getElementById('sumResult').innerText = `Sum of numbers from 1 to ${number}: ${sum}`;
         document.getElementById('averageResult').innerText = `Average: ${average.toFixed(2)}`;
